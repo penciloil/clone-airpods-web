@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@import "settings";
+
+@mixin text-margin($margin) {
+    text-align: center;
+    margin: 0 $margin;
+}
+
+@mixin margin-center($margin) {
+    max-width: 1200px;
+    margin: 0 $margin;
+}
+
+.fixed-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-fixed;
+    background-color: $black-color;
+    opacity: 0.95;
+}
+
+.nav {
+    @include text-margin(2rem);
+
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-logo {
+        color: $white-color;
+        font-weight: $font-light;
+        font-size: $big-font-size;
+    }
+    &-menu {
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+    &-link {
+        color: $white-color;
+
+    }
+    &-btn {
+        background-color: $second-color;
+        color: $white-color;
+        padding: 0.375rem 1rem;
+        border-radius: 1rem;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .nav {
+        &-menu {
+            margin-left: auto;
+        }
+        &-list {
+            display: flex;
+        }
+        &-item {
+            margin-right: 1.5rem;
+        }
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .nav {
+        @include margin-center(auto)
+    }
+}
