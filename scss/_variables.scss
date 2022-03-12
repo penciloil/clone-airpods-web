@@ -30,6 +30,21 @@ $small-font-size: 0.75rem;
     $small-font-size: 0.9rem;
 }
 
+:root {
+    --bigger-font-size: 2.25rem;
+    @media screen and (min-width:768px) {
+        --bigger-font-size: 3rem;
+
+    }
+}
+
+// Line height
+
+$line-height-medium: 2rem;
+$line-height-smaller: 1.5rem;
+$line-height-smallest: 1rem;
+
+
 // Z-index
 $z-back: -10;
 $z-normal: 1;
